@@ -1,0 +1,29 @@
+def countdown(time_sec):
+    while time_sec:
+        mins, secs = divmod(time_sec, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        print('\r', timeformat, end='')
+        time.sleep(1)
+        time_sec -= 1
+        if timeformat == "00:01":
+            x = timeformat.replace("00:01", "00:00")
+            print('\r', x, end='')
+        # elif timeformat == "00:30":
+        #     y = 'Breathe'
+        #     time.sleep(1)
+        #     time_sec -= 1
+        #     engine.say(y)
+        #     engine.runAndWait()
+
+
+# countdown_thread = threading.Thread(target=countdown, args=(None,))
+# countdown_thread.start()
+# for time_count in range(0, 1200):
+#     if time_count == 45:
+#         p = 'Breathe'
+#         time.sleep(1)
+#         countdown -= 1
+#         engine.say(p)
+#         engine.runAndWait()
+#     elif time_count == 0:
+#         break
